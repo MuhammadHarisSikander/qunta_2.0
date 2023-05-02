@@ -123,7 +123,7 @@ export default function EditUser({ allDesignation, allLocation, allRoles, allDep
 
     }
     React.useEffect(() => {
-        console.log("UseEffect Data ", user)
+        console.log("user.roles ", user.roles)
         // console.log("All location useEffect", props.allLocation)
     }, [name])
 
@@ -294,7 +294,7 @@ export default function EditUser({ allDesignation, allLocation, allRoles, allDep
                         renderValue={(selected) => (
                             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                                 {selected.map((value) => (
-                                    <Chip key={value.id} label={value.name} />
+                                    <Chip key={value.id} label={value} />
                                 ))}
                             </Box>
                         )}

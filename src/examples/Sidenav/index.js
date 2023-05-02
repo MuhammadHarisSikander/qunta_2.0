@@ -48,6 +48,7 @@ import {
 } from "context";
 
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
+  console.log("routes in sidenav", routes)
   const [controller, dispatch] = useMaterialUIController();
   const { miniSidenav, transparentSidenav, whiteSidenav, darkMode, sidenavColor } = controller;
   const location = useLocation();
@@ -107,6 +108,29 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         <NavLink key={key} to={route}>
           <SidenavCollapse name={name} icon={icon} active={key === collapseName} />
         </NavLink>
+      );
+    } else if (type === "logout") {
+      returnValue = (
+        <div
+          onClick={() => {
+            localStorage.clear();
+            window.location.replace('/authentication/sign-in');
+          }}>
+          <MDTypography
+            key={key}
+            color={textColor}
+            display="block"
+            variant="caption"
+            fontWeight="bold"
+            textTransform="uppercase"
+            pl={3}
+            mt={2}
+            mb={1}
+            ml={1}
+          >
+            Logout
+          </MDTypography>
+        </div>
       );
     } else if (type === "title") {
       returnValue = (

@@ -63,6 +63,11 @@ const routes = [
     icon: <Icon fontSize="small">dashboard</Icon>,
     route: "/dashboard",
     component: <Dashboard />,
+    auth: true,
+    roles: [
+      'user-list',
+      'user-view'
+    ]
   },
   {
     type: "collapse",
@@ -71,6 +76,11 @@ const routes = [
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/user-data",
     component: <Tables />,
+    auth: true,
+    roles: [
+      'user-list',
+      'user-view'
+    ]
   },
   {
     type: "collapse",
@@ -79,6 +89,8 @@ const routes = [
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/departments",
     component: <Department />,
+    auth: true,
+    roles: []
   },
   {
     type: "collapse",
@@ -87,6 +99,8 @@ const routes = [
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/software-request",
     component: <SoftReqForm />,
+    auth: true,
+    roles: []
   },
   {
     type: "collapse",
@@ -95,6 +109,8 @@ const routes = [
     icon: <Icon fontSize="small">assignment</Icon>,
     route: "/form-listing",
     component: <SoftRequestChangeListing />,
+    auth: true,
+    roles: []
   },
   {
     // type: "collapse",
@@ -103,6 +119,8 @@ const routes = [
     icon: <Icon fontSize="small">assignment</Icon>,
     route: "/form-listing/:formId",
     component: <PerRequestForm />,
+    auth: true,
+    roles: []
   },
   {
     type: "collapse",
@@ -111,6 +129,8 @@ const routes = [
     icon: <Icon fontSize="small">receipt_long</Icon>,
     route: "/billing",
     component: <Billing />,
+    auth: true,
+    roles: []
   },
   {
     type: "collapse",
@@ -119,6 +139,8 @@ const routes = [
     icon: <Icon fontSize="small">format_textdirection_r_to_l</Icon>,
     route: "/rtl",
     component: <RTL />,
+    auth: true,
+    roles: []
   },
   {
     type: "collapse",
@@ -127,6 +149,8 @@ const routes = [
     icon: <Icon fontSize="small">notifications</Icon>,
     route: "/notifications",
     component: <Notifications />,
+    auth: true,
+    roles: []
   },
   {
     type: "collapse",
@@ -135,6 +159,8 @@ const routes = [
     icon: <Icon fontSize="small">person</Icon>,
     route: "/profile",
     component: <Profile />,
+    auth: true,
+    roles: []
   },
   {
     type: "collapse",
@@ -143,14 +169,26 @@ const routes = [
     icon: <Icon fontSize="small">login</Icon>,
     route: "/authentication/sign-in",
     component: <SignIn />,
+    roles: []
   },
+  // {
+  //   type: "collapse",
+  //   name: "Sign Up",
+  //   key: "sign-up",
+  //   icon: <Icon fontSize="small">assignment</Icon>,
+  //   route: "/authentication/sign-up",
+  //   component: <SignUp />,
+  //   auth: true
+  // },
   {
-    type: "collapse",
-    name: "Sign Up",
-    key: "sign-up",
-    icon: <Icon fontSize="small">assignment</Icon>,
-    route: "/authentication/sign-up",
-    component: <SignUp />,
+    type: "logout",
+    name: "Logout",
+    key: "logout",
+    icon: <Icon fontSize="small">logout</Icon>,
+    roles: [
+      'user-list',
+      'user-view'
+    ]
   },
 ];
 
